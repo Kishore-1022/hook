@@ -13,6 +13,7 @@ function emailReducer(emailState,actionEmail){
   };
   return{value:'',isValid:false};
 };
+
 function passwordReducer(passwordState,dispatchPassword){
   if (dispatchPassword.type==="PASSWORD_INPUT"){
     return{value:dispatchPassword.val, isValid:dispatchPassword.val.length>6};
@@ -42,6 +43,7 @@ const Login = (props) => {
 
   const passwordChangeHandler = (event) => {
     dispatchPassword({type:'PASSWORD_INPUT', val:event.target.value});
+    console.log(passwordState)
    
 
     setFormIsValid(
